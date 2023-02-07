@@ -12,6 +12,8 @@ import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import {MainMenuComponent} from '@pages/main-menu/main-menu.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
+import { ProductosComponent } from '@pages/productos/productos.component';
+import { UsuariosComponent } from '@pages/usuarios/usuarios.component';
 
 const routes: Routes = [
     {
@@ -29,12 +31,20 @@ const routes: Routes = [
                 component: BlankComponent
             },
             {
+                path: 'usuarios',
+                component: UsuariosComponent
+            },
+            {
                 path: 'sub-menu-1',
                 component: SubMenuComponent
             },
             {
                 path: 'sub-menu-2',
                 component: BlankComponent
+            },
+            {
+                path: 'sub-menu-3',
+                component: ProductosComponent
             },
             {
                 path: '',
