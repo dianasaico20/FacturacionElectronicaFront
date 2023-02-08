@@ -1,8 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
-
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {PersonasComponent } from '@pages/personas/personas.component';
+
 import {AppRoutingModule} from '@/app-routing.module';
 import {AppComponent} from './app.component';
 import {MainComponent} from '@modules/main/main.component';
@@ -38,16 +37,16 @@ import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
-import { PersonasComponent } from './pages/personas/personas.component';
-
+import { MatTableModule } from '@angular/material/table';
+import {FormsModule} from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
 
 @NgModule({
     declarations: [
-
         AppComponent,
-        PersonasComponent,
         MainComponent,
         LoginComponent,
         HeaderComponent,
@@ -69,8 +68,7 @@ registerLocaleData(localeEn, 'en-EN');
         ControlSidebarComponent,
         SidebarSearchComponent,
         ProductosComponent,
-        UsuariosComponent,
-        PersonasComponent
+        UsuariosComponent
     ],
     imports: [
         BrowserModule,
@@ -79,6 +77,10 @@ registerLocaleData(localeEn, 'en-EN');
         AppRoutingModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
+        MatTableModule,
+        MatInputModule,
+        MatButtonModule,
+        FormsModule  ,
         ToastrModule.forRoot({
             timeOut: 3000,
             positionClass: 'toast-top-right',
