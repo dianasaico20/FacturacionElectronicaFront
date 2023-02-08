@@ -37,7 +37,10 @@ import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
-
+import { MatTableModule } from '@angular/material/table';
+import {FormsModule} from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
 
@@ -74,6 +77,10 @@ registerLocaleData(localeEn, 'en-EN');
         AppRoutingModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
+        MatTableModule,
+        MatInputModule,
+        MatButtonModule,
+        FormsModule  ,
         ToastrModule.forRoot({
             timeOut: 3000,
             positionClass: 'toast-top-right',
