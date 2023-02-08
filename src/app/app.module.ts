@@ -1,7 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
+
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-
+import {PersonasComponent } from '@pages/personas/personas.component';
 import {AppRoutingModule} from '@/app-routing.module';
 import {AppComponent} from './app.component';
 import {MainComponent} from '@modules/main/main.component';
@@ -37,13 +38,16 @@ import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { PersonasComponent } from './pages/personas/personas.component';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
 
 @NgModule({
     declarations: [
+
         AppComponent,
+        PersonasComponent,
         MainComponent,
         LoginComponent,
         HeaderComponent,
@@ -65,7 +69,8 @@ registerLocaleData(localeEn, 'en-EN');
         ControlSidebarComponent,
         SidebarSearchComponent,
         ProductosComponent,
-        UsuariosComponent
+        UsuariosComponent,
+        PersonasComponent
     ],
     imports: [
         BrowserModule,
