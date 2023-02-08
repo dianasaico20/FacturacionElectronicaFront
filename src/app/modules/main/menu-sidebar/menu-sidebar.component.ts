@@ -48,6 +48,11 @@ export const MENU = [
         iconClasses: 'fas fa-user',
         path: ['/usuarios']
     },
+    {
+        name: 'Personas',
+        iconClasses: 'fas fa-user',
+        path: ['/personas']
+    },
 
     {
         name: 'Productos',

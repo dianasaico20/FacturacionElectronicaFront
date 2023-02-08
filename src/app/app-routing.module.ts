@@ -14,6 +14,7 @@ import {MainMenuComponent} from '@pages/main-menu/main-menu.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
 import { ProductosComponent } from '@pages/productos/productos.component';
 import { UsuariosComponent } from '@pages/usuarios/usuarios.component';
+import { PersonasComponent } from '@pages/personas/personas.component';
 
 const routes: Routes = [
     {
@@ -33,6 +34,10 @@ const routes: Routes = [
             {
                 path: 'usuarios',
                 component: UsuariosComponent
+            },
+            {
+                path: 'personas',
+                component: PersonasComponent
             },
             {
                 path: 'sub-menu-1',

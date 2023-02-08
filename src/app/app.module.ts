@@ -41,6 +41,8 @@ import { MatTableModule } from '@angular/material/table';
 import {FormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { PersonasComponent } from '@pages/personas/personas.component';
+
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
 
@@ -68,7 +70,10 @@ registerLocaleData(localeEn, 'en-EN');
         ControlSidebarComponent,
         SidebarSearchComponent,
         ProductosComponent,
-        UsuariosComponent
+        UsuariosComponent,
+        PersonasComponent
+        
+        
     ],
     imports: [
         BrowserModule,
