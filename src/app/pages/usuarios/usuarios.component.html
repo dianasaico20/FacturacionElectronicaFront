@@ -16,27 +16,61 @@
     <!-- /.container-fluid -->
 </section>
 
+
+
+
 <!-- Main content -->
 <section class="content">
-    <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Registrar nuevos Usuarios</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Ir</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Listado de Usuarios</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Ir</a>
-            </div>
-          </div>
-        </div>
+    <table mat-table [dataSource]="datos" class="mat-elevation-z8" #tabla1>
+
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef> Código </th>
+          <td mat-cell *matCellDef="let articulo"> {{articulo.codigo}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="usuario">
+          <th mat-header-cell *matHeaderCellDef> Usuario</th>
+          <td mat-cell *matCellDef="let articulo"> {{articulo.usuario}} </td>
+        </ng-container>
+        <ng-container matColumnDef="rol">
+            <th mat-header-cell *matHeaderCellDef> Rol</th>
+            <td mat-cell *matCellDef="let articulo"> {{articulo.rol}}</td>
+          </ng-container>
+      
+        <ng-container matColumnDef="borrar">
+          <th mat-header-cell *matHeaderCellDef> Borrar </th>
+          <td mat-cell *matCellDef="let j = index;">
+            <button mat-raised-button color="warn" focusable="false" (click)="borrarFila(j)">
+              Borrar
+            </button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+      </table>
+      <div class="contenedor">
+      
+        <mat-form-field>
+          <input matInput [(ngModel)]="articuloselect.codigo" type="number" placeholder="Ingrese código">
+        </mat-form-field>
+      
+        <mat-form-field>
+          <input matInput [(ngModel)]="articuloselect.usuario" type="text" placeholder="Ingrese usuario">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="articuloselect.rol" type="text" placeholder="Ingrese rol">
+          </mat-form-field>
+    
+        <button mat-raised-button color="primary" (click)="agregar()">Agregar</button>
+      
       </div>
 </section>
 <!-- /.content -->
+
+
+
+
+
+
+
