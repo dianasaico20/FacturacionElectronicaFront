@@ -50,11 +50,6 @@ export const MENU = [
     },
 
     {
-        name: 'Productos',
-        iconClasses: 'fas fa-user',
-        path: ['/sub-menu-3']
-    },
-    {
         name: 'Menu',
         iconClasses: 'fas fa-folder',        
         children: [
@@ -68,7 +63,12 @@ export const MENU = [
                 iconClasses: 'fas fa-file',
                 path: ['/sub-menu-2']
             },
-           
+            {
+                name: 'Productos',
+                iconClasses: 'far fa-productos',
+                path: ['/sub-menu-3']
+            },
+            
         ]
     }
 ];
