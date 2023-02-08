@@ -10,8 +10,8 @@ export class UsuariosComponent {
   columnas: string[] = ['codigo', 'usuario', 'rol', 'borrar'];
 
   datos: Articulo[] = [new Articulo(1, 'Andre',"Administrador"),
-  new Articulo(1, 'Xavier_12',"Vendedor"),
-  new Articulo(1, 'Dani_s',"Vendededor"),
+  new Articulo(2, 'Xavier_12',"Vendedor"),
+  new Articulo(3, 'Dani_s',"Vendededor"),
   ];
 
   articuloselect: Articulo = new Articulo(0, "","");
