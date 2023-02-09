@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-
 import {AppRoutingModule} from '@/app-routing.module';
 import {AppComponent} from './app.component';
 import {MainComponent} from '@modules/main/main.component';
@@ -18,7 +17,6 @@ import {DashboardComponent} from '@pages/dashboard/dashboard.component';
 import {ToastrModule} from 'ngx-toastr';
 import {MessagesComponent} from '@modules/main/header/messages/messages.component';
 import {NotificationsComponent} from '@modules/main/header/notifications/notifications.component';
-
 import {registerLocaleData} from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import {UserComponent} from '@modules/main/header/user/user.component';
@@ -42,6 +40,7 @@ import {FormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { PersonasComponent } from '@pages/personas/personas.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -85,6 +84,7 @@ registerLocaleData(localeEn, 'en-EN');
         MatTableModule,
         MatInputModule,
         MatButtonModule,
+        MatDividerModule,
         FormsModule  ,
         ToastrModule.forRoot({
             timeOut: 3000,
