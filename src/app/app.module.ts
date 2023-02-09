@@ -38,6 +38,11 @@ import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search
 import { ProductosComponent } from './pages/productos/productos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
+import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
+import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
+
+
+
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
 
@@ -65,7 +70,12 @@ registerLocaleData(localeEn, 'en-EN');
         ControlSidebarComponent,
         SidebarSearchComponent,
         ProductosComponent,
-        UsuariosComponent
+        UsuariosComponent,
+
+        ProveedoresComponent,
+        CrearproveedoresComponent
+
+        
     ],
     imports: [
         BrowserModule,
