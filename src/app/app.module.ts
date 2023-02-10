@@ -42,6 +42,15 @@ import {FormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { PersonasComponent } from '@pages/personas/personas.component';
+import { DirectivaComponent } from './directiva/directiva.component';
+import { RouterModule ,Routes} from '@angular/router';
+//Servicios
+import { PersonasService } from '@pages/personas/personas.service';
+import { FormpersonasComponent } from '@pages/personas/formpersonas.component';
+
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -71,7 +80,11 @@ registerLocaleData(localeEn, 'en-EN');
         SidebarSearchComponent,
         ProductosComponent,
         UsuariosComponent,
-        PersonasComponent
+        PersonasComponent,
+        DirectivaComponent,
+        FormpersonasComponent,
+       
+        
         
         
     ],
@@ -85,6 +98,7 @@ registerLocaleData(localeEn, 'en-EN');
         MatTableModule,
         MatInputModule,
         MatButtonModule,
+        MatIconModule,
         FormsModule  ,
         ToastrModule.forRoot({
             timeOut: 3000,
@@ -93,7 +107,8 @@ registerLocaleData(localeEn, 'en-EN');
         }),
         ProfabricComponentsModule
     ],
-    providers: [],
+    providers: [PersonasService],
+
     bootstrap: [AppComponent]
 })
 export class AppModule {}
