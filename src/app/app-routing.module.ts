@@ -16,6 +16,9 @@ import { ProductosComponent } from '@pages/productos/productos.component';
 import { UsuariosComponent } from '@pages/usuarios/usuarios.component';
 import { PersonasComponent } from '@pages/personas/personas.component';
 
+import { ProveedoresComponent } from '@pages/proveedores/proveedores.component';
+import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
+
 const routes: Routes = [
     {
         path: '',
@@ -48,13 +51,22 @@ const routes: Routes = [
                 component: BlankComponent
             },
             {
-                path: 'sub-menu-3',
+                path: 'productos',
                 component: ProductosComponent
             },
             {
                 path: '',
                 component: DashboardComponent
+            },
+            {
+                path: 'proveedores',
+                component: ProveedoresComponent
+            },
+            {
+                path: 'crearproveedores',
+                component: CrearproveedoresComponent
             }
+
         ]
     },
     {
