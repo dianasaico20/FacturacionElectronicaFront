@@ -1,7 +1,5 @@
-import { Persona } from '@/clases/Persona';
 import { Component,  ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
-import { PersonaService } from '@/servicios/persona.service';
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -9,20 +7,16 @@ import { PersonaService } from '@/servicios/persona.service';
 })
 
 export class UsuariosComponent {
-  columnas: string[] = ['codigo', 'nombre', 'apellido', 'cedula', 'borrar'];
+  columnas: string[] = ['codigo', 'usuario', 'rol', 'borrar'];
 
   datos: Articulo[] = [new Articulo(1, 'Andre',"Administrador"),
   new Articulo(2, 'Xavier_12',"Vendedor"),
   new Articulo(3, 'Dani_s',"Vendededor"),
   ];
-  personasOb:Persona[]=[];
 
-  //Personaselect: Articulo = new Articulo(0, "","");
+  articuloselect: Articulo = new Articulo(0, "","");
 
   @ViewChild(MatTable) tabla1!: MatTable<Articulo>;
-
-
-
 
   borrarFila(cod: number) {
     if (confirm("Realmente quiere borrarlo?")) {
@@ -31,16 +25,11 @@ export class UsuariosComponent {
     }
   }
 
-  /*agregar() {
+  agregar() {
     this.datos.push(new Articulo(this.articuloselect.codigo, this.articuloselect.usuario,this.articuloselect.rol));
     this.tabla1.renderRows();
     this.articuloselect = new Articulo(0, "","" );
-  }*/
-
-  
-
-
-
+  }
 }
 
 
