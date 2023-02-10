@@ -6,21 +6,26 @@ import {AppService} from '@services/app.service';
 import {Observable} from 'rxjs';
 
 const BASE_CLASSES = 'main-sidebar elevation-4';
+
 @Component({
     selector: 'app-menu-sidebar',
     templateUrl: './menu-sidebar.component.html',
     styleUrls: ['./menu-sidebar.component.scss']
 })
+
+
 export class MenuSidebarComponent implements OnInit {
     @HostBinding('class') classes: string = BASE_CLASSES;
     public ui: Observable<UiState>;
     public user;
     public menu = MENU;
 
+
     constructor(
         public appService: AppService,
         private store: Store<AppState>
     ) {}
+
 
     ngOnInit() {
         this.ui = this.store.select('ui');
@@ -30,6 +35,7 @@ export class MenuSidebarComponent implements OnInit {
         this.user = this.appService.user;
     }
 }
+
 
 export const MENU = [
     {
@@ -48,17 +54,7 @@ export const MENU = [
         iconClasses: 'fas fa-user',
         path: ['/usuarios']
     },
-    {
-        name: 'Personas',
-        iconClasses: 'fas fa-user',
-        path: ['/personas']
-    },
 
-    {
-        name: 'Productos',
-        iconClasses: 'fas fa-user',
-        path: ['/sub-menu-3']
-    },
     {
         name: 'Menu',
         iconClasses: 'fas fa-folder',        
@@ -73,7 +69,17 @@ export const MENU = [
                 iconClasses: 'fas fa-file',
                 path: ['/sub-menu-2']
             },
-           
+            {
+                name: 'Productos',
+                iconClasses: 'far fa-productos',
+                path: ['/productos']
+            },
+            {
+                name: 'Proveedores',
+                iconClasses: 'fas fa-file',
+                path: ['/proveedores']
+            },
+            
         ]
     }
 ];
