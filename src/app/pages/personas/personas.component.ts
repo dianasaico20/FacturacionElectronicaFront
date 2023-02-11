@@ -8,7 +8,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { FormpersonasComponent } from './formpersonas.component';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.component.html',

@@ -2,7 +2,7 @@
     
     <div class="card-body">
 
-        <form ngNativeValidate [formGroup]="form" (ngSubmit)="create()">
+          <!--  <form ngNativeValidate [formGroup]="form" (ngSubmit)="create()">
             
                
                     <div class="controles-container">
@@ -24,7 +24,7 @@
                         <mat-form-field> 
                             <input type="email" formControlName="correo" type="email" [email]="true" matInput placeholder="Correo" name="correo" [(ngModel)]="personasform.correo_persona" required />
                         </mat-form-field>
-                    </div>
+                    </div> -->
 
                 
 
@@ -39,7 +39,7 @@
         <strong>{{form.value.correo}}</strong>
         <strong>{{form.value.telefono}}</strong>
         <strong>{{form.value.direccion}}</strong> -->
-        </form>
+          <!--  </form> -->
         
         <div class="form-group-row" *ngIf="!personasform.id_persona else elseBlock">
             <div class="col-sm-6">

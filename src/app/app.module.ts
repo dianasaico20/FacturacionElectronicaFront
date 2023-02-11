@@ -49,6 +49,10 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatListModule} from '@angular/material/list';
 import { MatInputModule } from "@angular/material/input";
 import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
+import { MatButtonModule } from '@angular/material/button'; 
+import { FormsModule } from '@angular/forms';
+
+import {MatIconModule} from '@angular/material/icon';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -78,10 +82,11 @@ registerLocaleData(localeEn, 'en-EN');
         SidebarSearchComponent,
         ProductosComponent,
         UsuariosComponent,
-
         ProveedoresComponent,
         CrearproveedoresComponent,
-        ListadoUsuariosComponent
+        ListadoUsuariosComponent,
+        
+
 
         
     ],
@@ -100,7 +105,15 @@ registerLocaleData(localeEn, 'en-EN');
         ScrollingModule,
         CdkAccordionModule,
         MatListModule,
-        MatInputModule ,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        FormsModule  ,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        FormsModule,
+        ReactiveFormsModule,
+
         ToastrModule.forRoot({
             timeOut: 3000,
             positionClass: 'toast-top-right',
