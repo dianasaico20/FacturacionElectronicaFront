@@ -18,6 +18,7 @@ import { PersonasComponent } from '@pages/personas/personas.component';
 
 import { ProveedoresComponent } from '@pages/proveedores/proveedores.component';
 import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
+import { ListadoUsuariosComponent } from '@pages/listado-usuarios/listado-usuarios.component';
 
 const routes: Routes = [
     {
@@ -37,6 +38,10 @@ const routes: Routes = [
             {
                 path: 'usuarios',
                 component: UsuariosComponent
+            },
+            {
+                path: 'listausuarios',
+                component: ListadoUsuariosComponent
             },
             {
                 path: 'personas',

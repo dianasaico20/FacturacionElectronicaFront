@@ -1,50 +1,124 @@
 import { Persona } from '@/clases/Persona';
-import { Component,  ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { PersonaService } from '@/servicios/persona.service';
+import Swal from 'sweetalert2';
+import { ChangeDetectionStrategy,Component, OnInit } from '@angular/core';
+import {map, Observable, startWith} from "rxjs";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import { Usuarios } from '@/clases/Usuarios';
+import { UsuariosService } from '@/servicios/usuarios.service';
+import {Router} from "@angular/router";
+import {MatSelectionListChange} from "@angular/material/list";
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.scss']
 })
 
-export class UsuariosComponent {
-  columnas: string[] = ['codigo', 'nombre', 'apellido', 'cedula', 'borrar'];
+export class UsuariosComponent implements OnInit{
+  issloading=true;
+  isexist?:boolean;
+  isLinear = true;
 
-  datos: Articulo[] = [new Articulo(1, 'Andre',"Administrador"),
-  new Articulo(2, 'Xavier_12',"Vendedor"),
-  new Articulo(3, 'Dani_s',"Vendededor"),
-  ];
-  personasOb:Persona[]=[];
+  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+  persona:Persona[]=[];
+  personasselect: Persona= new Persona();
+  usuario:Usuarios[]=[];
 
-  //Personaselect: Articulo = new Articulo(0, "","");
+  filteredOptions?: Observable<Persona[]>;
+  myControl = new FormControl();
+  firstFormGroup: FormGroup |  null= null;
+  secondFormGroup: FormGroup | null= null
+  public asignaUsua: Usuarios= new Usuarios();
 
-  @ViewChild(MatTable) tabla1!: MatTable<Articulo>;
+  constructor(private _formBuilder: FormBuilder,
+    private personaService:PersonaService,
+    private usuarioService:UsuariosService,
+    private router: Router) {}
 
+  ngOnInit(): void {
 
+    this.firstFormGroup = this._formBuilder.group({
+      firstCotrl: ['', Validators.required],
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required],
+    });
 
+  
+    this.personaService.listarPersona().subscribe(data=>{
+      this.persona=data;
+      this.filteredOptions = this.myControl.valueChanges.pipe(
+        startWith(''),
+        map(values=>this.filter(values)),
+      );
+      this.issloading=false;
+    })
 
-  borrarFila(cod: number) {
-    if (confirm("Realmente quiere borrarlo?")) {
-      this.datos.splice(cod, 1);
-      this.tabla1.renderRows();
-    }
   }
-
-  /*agregar() {
-    this.datos.push(new Articulo(this.articuloselect.codigo, this.articuloselect.usuario,this.articuloselect.rol));
-    this.tabla1.renderRows();
-    this.articuloselect = new Articulo(0, "","" );
-  }*/
 
   
 
+  selectionPersona( event: MatSelectionListChange){
+    this.personasselect=  event.options[0].value;
+ // console.log(this.docentesselect.primerapellido)
+  // this.docentesselect= docentesselect.options.values
 
-
-}
-
-
-export class Articulo {
-  constructor(public codigo: number, public usuario: string,  public rol: string) {
   }
+
+  filter(value: any): Persona[] {
+    const filterValue = value.toLowerCase();
+    return this.persona.filter(option => 
+      option.cedula?.toLocaleLowerCase().includes(filterValue)
+      ||option.nombre_persona?.toLocaleLowerCase().includes(filterValue)
+      ||option.apellido_persona?.toLocaleLowerCase().includes(filterValue)
+      ||option.correo_persona?.toLocaleLowerCase().includes(filterValue)
+    );
+  
+  }
+  
+ /* usuarios:Usuarios = new Usuarios();
+  obtnerdatos(persona:Persona):Usuarios{
+    this.usuarios.password
+    this.usuarios.user
+
+    return this.usuarios;
+  }*/
+
+
+
+//GuardarResaposable de Prácticas
+/*guardarRepresentante(docente:Docentes):void{
+  Swal.fire({
+    title: 'Confirmación',
+    text: "El docente ha sido seleccionado como Responsable de Prácticas Preprofesionales",
+    icon: 'info',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Aceptar',
+    background: "#fbc02d"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.representanteService.create(this.obtnerdatos(docente)).subscribe(value => {
+        Swal.fire({
+          title: 'Asignación Correcta',
+          icon: 'success',
+          iconColor :'#17550c',
+          color: "#0c3255",
+          confirmButtonColor:"#0c3255",
+          background: "#63B68B",
+        })
+        
+  
+      })
+    }
+  })
+
+}*/
+
+
+
+
 }
+

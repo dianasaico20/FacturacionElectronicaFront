@@ -37,11 +37,18 @@ import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
-
+import {MatDividerModule} from '@angular/material/divider';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
 import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
-
-
+import { MatTableModule } from '@angular/material/table' 
+import { MatError, MatFormFieldModule } from "@angular/material/form-field";
+import {MatCardModule} from '@angular/material/card';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+import {CdkStepperModule} from '@angular/cdk/stepper';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {MatListModule} from '@angular/material/list';
+import { MatInputModule } from "@angular/material/input";
+import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -73,7 +80,8 @@ registerLocaleData(localeEn, 'en-EN');
         UsuariosComponent,
 
         ProveedoresComponent,
-        CrearproveedoresComponent
+        CrearproveedoresComponent,
+        ListadoUsuariosComponent
 
         
     ],
@@ -84,6 +92,15 @@ registerLocaleData(localeEn, 'en-EN');
         AppRoutingModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
+        MatTableModule,
+        MatDividerModule,
+        MatFormFieldModule,
+        CdkStepperModule,
+        MatCardModule,
+        ScrollingModule,
+        CdkAccordionModule,
+        MatListModule,
+        MatInputModule ,
         ToastrModule.forRoot({
             timeOut: 3000,
             positionClass: 'toast-top-right',

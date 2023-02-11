@@ -32,4 +32,11 @@ personaObj: Persona[] = [];
       .pipe(map((response) => response as Persona[]));
   }
 
+
+  
+  listarPersona():Observable<Persona[]>{
+    return this.http.get(this.listar).pipe(
+      map(response=> response as Persona[])
+    );
+  }
 }

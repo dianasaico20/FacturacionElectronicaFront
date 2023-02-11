@@ -49,10 +49,23 @@ export const MENU = [
         path: ['/blank']
     },
 
+
     {
         name: 'Usuarios',
-        iconClasses: 'fas fa-user',
-        path: ['/usuarios']
+        iconClasses: 'far fa-folder',        
+        children: [
+            {
+                name: 'Registro',
+                iconClasses: 'fas fa-user',
+                path: ['/usuarios']
+            },
+            {
+                name: 'Listado',
+                iconClasses: 'fas fa-list',
+                path: ['listausuarios']
+            }, 
+            
+        ]
     },
 
     {
