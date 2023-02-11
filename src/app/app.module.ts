@@ -53,6 +53,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 
 import {MatIconModule} from '@angular/material/icon';
+import { PersonaService } from './servicios/persona.service';
+import { UsuariosService } from './servicios/usuarios.service';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -121,7 +123,7 @@ registerLocaleData(localeEn, 'en-EN');
         }),
         ProfabricComponentsModule
     ],
-    providers: [],
+    providers: [PersonaService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
