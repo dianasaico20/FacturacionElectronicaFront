@@ -4,7 +4,7 @@
   <div class="container-fluid">
       <div class="row mb-2">
           <div class="col-sm-6">
-              <h1>Usuarios</h1>
+              <h1></h1>
           </div>
           <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -24,9 +24,6 @@
   <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
 
         <form [formGroup]="secondFormGroup" class="formulario">
           <mat-form-field appearance="outline">
@@ -46,15 +43,14 @@
           Cédula: {{ shoe.cedula }} 
           Nombre: {{ shoe.nombre_persona }} 
           Apellido:{{ shoe.apellido_persona }} 
-          Correo:{{ shoe.correo_persona }} 
+         
            </mat-list-option>        
            </mat-selection-list>
            </cdk-virtual-scroll-viewport>
            <br>
                <p>
-                 <strong>Persona seleccionado: </strong>
-                 {{personasselect.nombre_persona}}
-                 {{personasselect.apellido_persona}}
+                 <strong>Seleccione una persona: </strong>
+                 
                </p>
  
          </mat-card-content>
@@ -63,19 +59,98 @@
        
        </form>
 
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+
       </div>
     </div>
   </div>
+
+
+
   <div class="col-sm-6">
-    <div class="card">
+    <div class="card2">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <form [formGroup]="secondFormGroup" class="formulario">
+          <mat-card >
+            <mat-card-header>
+              <mat-card-title>Datos Seleccionados</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+        
+            <mat-card-content>
+              <br>
+                <h5><strong>Id: </strong> {{personasselect.id_persona}}</h5>
+                <h5><strong>Cédula: </strong> {{personasselect.cedula}}</h5>
+                <h5><strong>Nombre: </strong>{{personasselect.  nombre_persona}}</h5>
+                <h5><strong>Apellido: </strong>{{personasselect.apellido_persona}}</h5>
+                <br>
+              <mat-divider></mat-divider>
+   
+             
+            </mat-card-content>
+     
+     
+            <div>
+              <mat-card-header>
+                <mat-card-title>Ingrese los datos para el nuevo usuario</mat-card-title>
+              </mat-card-header>
+              <mat-divider></mat-divider>
+              <mat-card-content>
+                <br>
+              <input type="text" class="form-control"  placeholder="Usuario"
+              onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" />
+              <br>
+              <input type="text" class="form-control"  placeholder="Contraseña"
+              onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" />
+              <br>
+              <div class="select">
+                <select class="form-select" aria-label="Default select example"name="selecionarr">
+                  <option  selected disabled> Seleccione un rol </option>
+                  <option *ngFor="let roles of  listaRoles"> {{roles. nombre_rol}} </option>
+              </select>
+            </div>
+            </mat-card-content>
+
+
+
+            </div>
+  
+          </mat-card>
+
+
+
+          <br>
+
+            <div class="buttons">
+                <a href="#" class="btn btn-1 ">Limpiar</a>
+                <a href="#" class="btn btn-2 ">Agregar</a>
+                <a href="#" class="btn btn-3 " [routerLink]="['/listausuarios']">Listado</a>
+            </div>
+
+
+        </form>
+
+
+
+
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 </div>

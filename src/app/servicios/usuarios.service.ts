@@ -9,7 +9,7 @@ import { Usuarios } from '@/clases/Usuarios';
 export class UsuariosService {
 
   private guardar:string="http://localhost:8080/api/savU";
-  private listar:string="http://localhost:8080/api/lisP";
+  private listar:string="http://localhost:8080/api/listU";
 
 usuarioObj: Usuarios[] = [];
 

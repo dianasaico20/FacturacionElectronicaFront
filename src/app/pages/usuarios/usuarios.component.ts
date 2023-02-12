@@ -9,6 +9,8 @@ import { Usuarios } from '@/clases/Usuarios';
 import { UsuariosService } from '@/servicios/usuarios.service';
 import {Router} from "@angular/router";
 import {MatSelectionListChange} from "@angular/material/list";
+import { Rol } from '@/clases/Rol';
+import { RolesService } from '@/servicios/roles.service';
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -19,6 +21,16 @@ export class UsuariosComponent implements OnInit{
   issloading=true;
   isexist?:boolean;
   isLinear = true;
+
+  listaRoles: Rol[]=[];
+
+
+
+
+
+
+
+
 
   typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
   persona:Persona[]=[];
@@ -34,6 +46,7 @@ export class UsuariosComponent implements OnInit{
   constructor(private _formBuilder: FormBuilder,
     private personaService:PersonaService,
     private usuarioService:UsuariosService,
+    private rolesService:RolesService,
     private router: Router) {}
 
   ngOnInit(): void {
@@ -44,7 +57,7 @@ export class UsuariosComponent implements OnInit{
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required],
     });
-
+   
   
     this.personaService.listarPersona().subscribe(data=>{
       this.persona=data;
@@ -53,7 +66,11 @@ export class UsuariosComponent implements OnInit{
         map(values=>this.filter(values)),
       );
       this.issloading=false;
-    })
+    });
+
+
+    this.rolesService.getRoles().subscribe(
+      listaRol=>this. listaRoles=listaRol );
 
   }
 
@@ -61,8 +78,7 @@ export class UsuariosComponent implements OnInit{
 
   selectionPersona( event: MatSelectionListChange){
     this.personasselect=  event.options[0].value;
- // console.log(this.docentesselect.primerapellido)
-  // this.docentesselect= docentesselect.options.values
+
 
   }
 
@@ -77,13 +93,16 @@ export class UsuariosComponent implements OnInit{
   
   }
   
- /* usuarios:Usuarios = new Usuarios();
-  obtnerdatos(persona:Persona):Usuarios{
-    this.usuarios.password
-    this.usuarios.user
 
-    return this.usuarios;
-  }*/
+
+
+
+
+
+
+
+
+
 
 
 

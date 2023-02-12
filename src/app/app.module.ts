@@ -51,10 +51,9 @@ import { MatInputModule } from "@angular/material/input";
 import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
 import { MatButtonModule } from '@angular/material/button'; 
 import { FormsModule } from '@angular/forms';
-
+import { MatSelectModule } from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import { PersonaService } from './servicios/persona.service';
-import { UsuariosService } from './servicios/usuarios.service';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -115,7 +114,7 @@ registerLocaleData(localeEn, 'en-EN');
         MatFormFieldModule,
         FormsModule,
         ReactiveFormsModule,
-
+        MatSelectModule,
         ToastrModule.forRoot({
             timeOut: 3000,
             positionClass: 'toast-top-right',
