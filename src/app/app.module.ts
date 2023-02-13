@@ -50,10 +50,12 @@ import {MatListModule} from '@angular/material/list';
 import { MatInputModule } from "@angular/material/input";
 import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
 import { MatButtonModule } from '@angular/material/button'; 
-import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-import {MatIconModule} from '@angular/material/icon';
 import { PersonaService } from './servicios/persona.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
+import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from "@angular/forms";
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -86,6 +88,8 @@ registerLocaleData(localeEn, 'en-EN');
         ProveedoresComponent,
         CrearproveedoresComponent,
         ListadoUsuariosComponent,
+        EditarUsuarioComponent,
+
         
 
 
@@ -96,7 +100,6 @@ registerLocaleData(localeEn, 'en-EN');
         StoreModule.forRoot({auth: authReducer, ui: uiReducer}),
         HttpClientModule,
         AppRoutingModule,
-        ReactiveFormsModule,
         BrowserAnimationsModule,
         MatTableModule,
         MatDividerModule,
@@ -108,13 +111,14 @@ registerLocaleData(localeEn, 'en-EN');
         MatListModule,
         MatInputModule,
         MatButtonModule,
-        MatIconModule,
         FormsModule  ,
         ReactiveFormsModule,
         MatFormFieldModule,
         FormsModule,
-        ReactiveFormsModule,
+
         MatSelectModule,
+        MatDialogModule,
+        MatIconModule,
         ToastrModule.forRoot({
             timeOut: 3000,
             positionClass: 'toast-top-right',
@@ -125,4 +129,6 @@ registerLocaleData(localeEn, 'en-EN');
     providers: [PersonaService],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+
+}

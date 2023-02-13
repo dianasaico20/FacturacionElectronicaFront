@@ -43,6 +43,7 @@ const routes: Routes = [
                 path: 'listausuarios',
                 component: ListadoUsuariosComponent
             },
+           
             {
                 path: 'personas',
                 component: PersonasComponent

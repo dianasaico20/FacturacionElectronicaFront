@@ -94,20 +94,33 @@
                 <mat-card-title>Ingrese los datos para el nuevo usuario</mat-card-title>
               </mat-card-header>
               <mat-divider></mat-divider>
+
               <mat-card-content>
+            
+
                 <br>
-              <input type="text" class="form-control"  placeholder="Usuario"
-              onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" />
+                <form  >
+                <div class="form-group">
+              <input type="text" class="form-control" id="usuario"  name="usua "   placeholder="Usuario"   [(ngModel)]="usuarioss.user"/>
+            </div>
+                   </form>
               <br>
-              <input type="text" class="form-control"  placeholder="Contraseña"
-              onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" />
+              <form  >
+              <div class="form-group">
+              <input type="text" class="form-control" id="pass"    name="contraseña " placeholder="Contraseña"  [(ngModel)]="usuarioss.password" />
+            </div>
+          </form>
               <br>
+              <form  >
+              <div class="form-group" id="left">
               <div class="select">
-                <select class="form-select" aria-label="Default select example"name="selecionarr">
+                <select class="form-select"  id="selecionarr" aria-label="Default select example" name="selecionarr"  [(ngModel)]="opcionSeleccionado" (change)="capturar()">
                   <option  selected disabled> Seleccione un rol </option>
                   <option *ngFor="let roles of  listaRoles"> {{roles. nombre_rol}} </option>
               </select>
             </div>
+          </div>
+        </form>
             </mat-card-content>
 
 
@@ -122,8 +135,8 @@
 
             <div class="buttons">
                 <a href="#" class="btn btn-1 ">Limpiar</a>
-                <a href="#" class="btn btn-2 ">Agregar</a>
-                <a href="#" class="btn btn-3 " [routerLink]="['/listausuarios']">Listado</a>
+                <a class="btn btn-2 "  (click)="guardarUsuario(personasselect)">Agregar</a>
+                <a  class="btn btn-3 " [routerLink]="['/listausuarios']">Listado</a>
             </div>
 
 

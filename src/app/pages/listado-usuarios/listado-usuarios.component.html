@@ -1,4 +1,11 @@
 
+<head>
+
+
+</head>
+
+
+
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -9,7 +16,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item active">Crud Usuarios</li>
+                    <li class="breadcrumb-item active">Listado de Usuarios</li>
                 </ol>
             </div>
         </div>
@@ -36,6 +43,7 @@
                         <th>ID</th>
                         <th>Usuario</th>
                         <th>Password</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +51,12 @@
                         <td> {{usuario.id_usuario}} </td>
                         <td> {{usuario.user}} </td>
                         <td> {{usuario.password}} </td>
-                 
+
+                        <td> 
+                            <button type="button" class="btn btn-warning"  (click)="openDialog(0)"  >Editar</button>
+                            <button type="button" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+
+                        </td>
                     </tr>
 
                 </tbody>
@@ -51,4 +64,9 @@
 
         </div>
     </div>
+
 </div>
+
+
+
+

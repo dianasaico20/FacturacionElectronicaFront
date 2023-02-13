@@ -10,6 +10,8 @@ export class UsuariosService {
 
   private guardar:string="http://localhost:8080/api/savU";
   private listar:string="http://localhost:8080/api/listU";
+  private actualizar: string = 'http://localhost:8080/api/modiU';
+  private borrar: string = 'http://localhost:8080/api/listU';
 
 usuarioObj: Usuarios[] = [];
 
@@ -29,5 +31,25 @@ usuarioObj: Usuarios[] = [];
     return this.http
       .get(this.listar)
       .pipe(map((response) => response as Usuarios[]));
+  }
+  
+
+  
+  //Metodo para editar por id
+  getUsuarios2(id): Observable<Usuarios[]> {
+    return this.http
+      .get(this.listar)
+      .pipe(map((response) => response as Usuarios[]));
+  }
+    //Metodo para editar por id
+  actualizarUsuario(usuario: Usuarios): Observable<Usuarios> {
+    return this.http.put<Usuarios>(
+      this.actualizar + '/' + usuario.id_usuario,
+      usuario
+    );
+  }
+  //Metodo para eliminar
+  eliminarUsuario(id: any): Observable<Usuarios> {
+    return this.http.delete<Usuarios>(this.borrar + '/' + id);
   }
 }

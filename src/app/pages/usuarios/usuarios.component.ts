@@ -1,5 +1,4 @@
 import { Persona } from '@/clases/Persona';
-import { MatTable } from '@angular/material/table';
 import { PersonaService } from '@/servicios/persona.service';
 import Swal from 'sweetalert2';
 import { ChangeDetectionStrategy,Component, OnInit } from '@angular/core';
@@ -11,6 +10,8 @@ import {Router} from "@angular/router";
 import {MatSelectionListChange} from "@angular/material/list";
 import { Rol } from '@/clases/Rol';
 import { RolesService } from '@/servicios/roles.service';
+
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -23,13 +24,6 @@ export class UsuariosComponent implements OnInit{
   isLinear = true;
 
   listaRoles: Rol[]=[];
-
-
-
-
-
-
-
 
 
   typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
@@ -92,8 +86,36 @@ export class UsuariosComponent implements OnInit{
     );
   
   }
+  opcionSeleccionado: string  = '0';
+
+  datousuario: string = "";
+
+  datocontrasenia: string = "";
+  verSeleccion: string        = '';
+ idRolUsuario: number = 0;
+  capturar() {
+    // Pasamos el valor seleccionado a la variable verSeleccion
+    this.verSeleccion = this.opcionSeleccionado;
+  }
+
+Asignarrol(){
+if(this.verSeleccion=="Admin"){
+this.idRolUsuario=1;
+}else
+{
+  this.idRolUsuario=2;
+}
+}
+
   
 
+usuarioss:Usuarios = new Usuarios();
+obtnerdatos(persona:Persona):Usuarios{
+  this.usuarioss.id_persona=persona.id_persona;
+  this.usuarioss.id_rol=this.idRolUsuario;
+
+  return this.usuarioss;
+}
 
 
 
@@ -102,15 +124,11 @@ export class UsuariosComponent implements OnInit{
 
 
 
-
-
-
-
-//GuardarResaposable de Prácticas
-/*guardarRepresentante(docente:Docentes):void{
+//Guardar Usuarios
+guardarUsuario(persona:Persona):void{
   Swal.fire({
     title: 'Confirmación',
-    text: "El docente ha sido seleccionado como Responsable de Prácticas Preprofesionales",
+    text: "La persona se le ha asignado un usuario",
     icon: 'info',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -119,7 +137,7 @@ export class UsuariosComponent implements OnInit{
     background: "#fbc02d"
   }).then((result) => {
     if (result.isConfirmed) {
-      this.representanteService.create(this.obtnerdatos(docente)).subscribe(value => {
+      this.usuarioService.create(this.obtnerdatos(persona)).subscribe(value => {
         Swal.fire({
           title: 'Asignación Correcta',
           icon: 'success',
@@ -134,7 +152,7 @@ export class UsuariosComponent implements OnInit{
     }
   })
 
-}*/
+}
 
 
 
