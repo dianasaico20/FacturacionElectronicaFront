@@ -48,6 +48,14 @@ usuarioObj: Usuarios[] = [];
       usuario
     );
   }
+
+
+
+
+
+
+
+  
   //Metodo para eliminar
   eliminarUsuario(id: any): Observable<Usuarios> {
     return this.http.delete<Usuarios>(this.borrar + '/' + id);

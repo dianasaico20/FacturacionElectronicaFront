@@ -29,7 +29,19 @@ export class ListadoUsuariosComponent {
 
 }
 
-openDialog(id_persona: number) {
+
+eliminar(id_usuario: number) {
+  if(confirm('¿Seguro que desea eliminar este usuario?')){  
+    this.usuariosService.eliminarUsuario(id_usuario).subscribe(
+      res => this.usuariosService.getUsuarios().subscribe(
+        listausua=>this. listaUsuarios=listausua 
+      )
+    );
+  }
+}
+
+
+openDialog(id_usuario: number) {
   const dialogConfig = new MatDialogConfig();
   dialogConfig.width = "55%";
   dialogConfig.autoFocus = true;
