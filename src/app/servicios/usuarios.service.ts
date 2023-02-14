@@ -11,7 +11,7 @@ export class UsuariosService {
   private guardar:string="http://localhost:8080/api/savU";
   private listar:string="http://localhost:8080/api/listU";
   private actualizar: string = 'http://localhost:8080/api/modiU';
-  private borrar: string = 'http://localhost:8080/api/listU';
+  private borrar: string = 'http://localhost:8080/api/delU';
 
 usuarioObj: Usuarios[] = [];
 
@@ -48,12 +48,6 @@ usuarioObj: Usuarios[] = [];
       usuario
     );
   }
-
-
-
-
-
-
 
   
   //Metodo para eliminar

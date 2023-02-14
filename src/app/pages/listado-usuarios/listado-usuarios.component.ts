@@ -41,6 +41,15 @@ eliminar(id_usuario: number) {
 }
 
 
+
+
+
+
+
+
+
+
+
 openDialog(id_usuario: number) {
   const dialogConfig = new MatDialogConfig();
   dialogConfig.width = "55%";
