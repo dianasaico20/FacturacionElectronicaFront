@@ -10,7 +10,7 @@ import {HeaderComponent} from '@modules/main/header/header.component';
 import {FooterComponent} from '@modules/main/footer/footer.component';
 import {MenuSidebarComponent} from '@modules/main/menu-sidebar/menu-sidebar.component';
 import {BlankComponent} from '@pages/blank/blank.component';
-import {ReactiveFormsModule} from '@angular/forms';
+//import {ReactiveFormsModule} from '@angular/forms';
 import {ProfileComponent} from '@pages/profile/profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RegisterComponent} from '@modules/register/register.component';
@@ -38,8 +38,15 @@ import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search
 import { ProductosComponent } from './pages/productos/productos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
-import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
-import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
+import { ProveedoresComponent } from '@pages/proveedores/proveedores.component';
+import { CrearproveedoresComponent } from './pages/proveedores/crearproveedores/crearproveedores.component';
+import { LeerproveedoresComponent } from './pages/proveedores/leerproveedores/leerproveedores.component';
+import { BorrarproveedoresComponent } from './pages/proveedores/borrarproveedores/borrarproveedores.component';
+import { ModificarproveedoresComponent } from './pages/proveedores/modificarproveedores/modificarproveedores.component';
+/////
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -73,7 +80,12 @@ registerLocaleData(localeEn, 'en-EN');
         UsuariosComponent,
 
         ProveedoresComponent,
-        CrearproveedoresComponent
+        CrearproveedoresComponent,
+        LeerproveedoresComponent,
+        ModificarproveedoresComponent,
+        BorrarproveedoresComponent,
+        
+
 
         
     ],
@@ -89,7 +101,11 @@ registerLocaleData(localeEn, 'en-EN');
             positionClass: 'toast-top-right',
             preventDuplicates: true
         }),
-        ProfabricComponentsModule
+        ProfabricComponentsModule,
+        
+        FormsModule
+
+
     ],
     providers: [],
     bootstrap: [AppComponent]

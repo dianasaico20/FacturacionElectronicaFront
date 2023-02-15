@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+</head>
+<body>
+
+    <h1>
+        Página Leer.
+    </h1>
+
+
+    <table class="table">
+    <!--regresaraproveedores()-->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>DIRECCION</th>
+                <th>TELEFONO</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of proveedores">
+                <th>{{item.id_proveedor}}</th>
+                <td>{{item.nombre_proveedor}}</td>
+                <td>{{item.direccion_proveedor}}</td>
+                <td>{{item.telefono_proveedor}}</td>
+
+                <td>
+                    <button type="button" class="btn btn-success"
+                    (click)="editar(item)"
+                    >Editar.</button>
+                    
+                    <button type="button" class="btn btn-danger" 
+                    (click)="eliminar(item.id_proveedor)">Eliminar.</button>
+                </td>
+
+
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+
+
+    
+</body>
+</html>

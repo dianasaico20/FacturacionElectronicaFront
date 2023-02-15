@@ -64,11 +64,10 @@ Es decir, aqui ira toda la interfaz de esta sección. ya veras, negro, quedara g
 
 
             <button
+            (click)="irpaginacrear()" 
             type="button"
             class="card-body" >
                 Ir a Crear.
-
-                
             </button>
 
 
@@ -123,11 +122,15 @@ Es decir, aqui ira toda la interfaz de esta sección. ya veras, negro, quedara g
             <!-- Cabezera -->
 
             <!-- Boton de Adentro -->
+
             <button
+            (click)="irpaginaleer()" 
             type="button"
             class="card-body" >
-                Ir a Tabla.
+            Ir a Tabla.
             </button>
+
+
             <!-- Boton de Adentro -->
 
             <!-- /.card-body -->
@@ -180,6 +183,7 @@ Es decir, aqui ira toda la interfaz de esta sección. ya veras, negro, quedara g
 
             <!-- Boton de Adentro -->
             <button
+            (click)="irpaginamodificar()" 
             type="button"
             class="card-body" >
                 Ir a Modificar.
@@ -235,6 +239,7 @@ Es decir, aqui ira toda la interfaz de esta sección. ya veras, negro, quedara g
 
             <!-- Boton de Adentro -->
             <button
+            (click)="irpaginaborrar()" 
             type="button"
             class="card-body" >
                 Ir a Eliminar.

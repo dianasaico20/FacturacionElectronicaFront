@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>
+        Página Modificar.
+    </h1>
+
+    <!--.....-->
+    <div>
+        <form [formGroup]="proveedoresForm" (ngSubmit)= regresaraproveedores()>
+
+        <!-- IDES YA CREADOS. -->
+        <div class="form-group">
+            <label> IDES. </label>
+            <select name="proveedores" id="proveedores" formControlName="proveedores" class="form-control">
+                <option value="item.id" *ngFor="let item of proveedores"> {{item.id_proveedor}}</option>
+            </select>
+        </div>
+
+        <!-- Nombre. -->
+        <div class="form-group">
+            <label> Nombre.</label>
+            <input type="text" formControlName="nombre_proveedor" class="form-control">
+        </div>
+        <!-- Direccion -->
+        <div class="form-group">
+            <label> Direccion. </label>
+            <input type="text" formControlName="direccion_proveedor" class="form-control">
+        </div>
+        <!-- Telefono -->
+        <div class="form-group">
+            <label> Telefono. </label>
+            <input type="text" formControlName="telefono_proveedor" class="form-control">
+        </div>
+        <!-- BOTON GUARDAR  -->
+        <button  
+        type="submit"
+        class="btn btn-primary"> Guardar. </button>
+        
+
+        
+        </form>
+    </div>
+    <!--class="formularioregistro".....-->
+
+        <!-- BOTON TRAER 
+        <button  
+        (click)="traerinfo()" 
+        type="submit"
+        class="btn btn-primary"> TRAER </button>
+-->
+
+
+    <button
+            (click)="regresaraproveedores()" 
+            type="button"
+            class="card-body" >
+                Ir a Casa.
+    </button>
+    //regresaraproveedores()
+    
+</body>
+</html>

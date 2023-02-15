@@ -16,7 +16,11 @@ import { ProductosComponent } from '@pages/productos/productos.component';
 import { UsuariosComponent } from '@pages/usuarios/usuarios.component';
 
 import { ProveedoresComponent } from '@pages/proveedores/proveedores.component';
-import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
+import { CrearproveedoresComponent } from './pages/proveedores/crearproveedores/crearproveedores.component';
+import { LeerproveedoresComponent } from './pages/proveedores/leerproveedores/leerproveedores.component';
+import { BorrarproveedoresComponent } from './pages/proveedores/borrarproveedores/borrarproveedores.component';
+import { ModificarproveedoresComponent } from './pages/proveedores/modificarproveedores/modificarproveedores.component';
+
 
 const routes: Routes = [
     {
@@ -53,6 +57,8 @@ const routes: Routes = [
                 path: '',
                 component: DashboardComponent
             },
+
+
             {
                 path: 'proveedores',
                 component: ProveedoresComponent
@@ -60,7 +66,20 @@ const routes: Routes = [
             {
                 path: 'crearproveedores',
                 component: CrearproveedoresComponent
+            },
+            {
+                path: 'borrarproveedores',
+                component: BorrarproveedoresComponent
+            },
+            {
+                path: 'leerproveedores',
+                component: LeerproveedoresComponent
+            },
+            {
+                path: 'modificarproveedores',
+                component: ModificarproveedoresComponent
             }
+
 
         ]
     },
@@ -87,8 +106,11 @@ const routes: Routes = [
     {path: '**', redirectTo: ''}
 ];
 
+
 @NgModule({
     imports: [RouterModule.forRoot(routes, {})],
     exports: [RouterModule]
 })
+
+
 export class AppRoutingModule {}
