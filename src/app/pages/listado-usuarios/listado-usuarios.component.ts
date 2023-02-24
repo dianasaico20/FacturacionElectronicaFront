@@ -50,13 +50,18 @@ eliminar(id_usuario: number) {
 
 
 
-openDialog(id_usuario: number) {
+openDialog(usuario: Usuarios ) {
   const dialogConfig = new MatDialogConfig();
   dialogConfig.width = "55%";
   dialogConfig.autoFocus = true;
-  const dialogRef = this.dialog.open(EditarUsuarioComponent, dialogConfig);
+  const dialogRef = this.dialog.open(EditarUsuarioComponent,{
+    width: "55%",
+    data: usuario
+  });
 
-
+  dialogRef.afterClosed().subscribe(result =>{
+    this.listarUsuarios();
+  })
 
 }
 

@@ -42,11 +42,9 @@ usuarioObj: Usuarios[] = [];
       .pipe(map((response) => response as Usuarios[]));
   }
     //Metodo para editar por id
-  actualizarUsuario(usuario: Usuarios): Observable<Usuarios> {
+  actualizarUsuario(usuario: Usuarios, id_usuario): Observable<Usuarios> {
     return this.http.put<Usuarios>(
-      this.actualizar + '/' + usuario.id_usuario,
-      usuario
-    );
+      this.actualizar + '/' +   usuario, id_usuario);
   }
 
   

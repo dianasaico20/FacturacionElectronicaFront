@@ -101,7 +101,16 @@ export const MENU = [
     },
 
 
-
+    {
+        name: 'Ventas',
+        iconClasses: 'fas fa-file',
+        path: ['/ventas']
+    },
+    {
+        name: 'Reportes',
+        iconClasses: 'fas fa-file',
+        path: ['/reportes']
+    },
 
 
 ];

@@ -38,8 +38,7 @@ import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search
 import { ProductosComponent } from './pages/productos/productos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import {MatDividerModule} from '@angular/material/divider';
-import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
-import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
+
 import { MatTableModule } from '@angular/material/table' 
 import { MatError, MatFormFieldModule } from "@angular/material/form-field";
 import {MatCardModule} from '@angular/material/card';
@@ -48,14 +47,18 @@ import {CdkStepperModule} from '@angular/cdk/stepper';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatListModule} from '@angular/material/list';
 import { MatInputModule } from "@angular/material/input";
-import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatSelectModule } from '@angular/material/select';
-import { PersonaService } from './servicios/persona.service';
 import { MatDialogModule } from '@angular/material/dialog';
-import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from "@angular/forms";
+import { VentasComponent } from './pages/ventas/ventas.component';
+import { ReportesComponent } from './pages/reportes/reportes.component';
+import { ListadoUsuariosComponent } from './pages/listado-usuarios/listado-usuarios.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
+import { PersonaService } from './servicios/persona.service';
+import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
+import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -89,6 +92,8 @@ registerLocaleData(localeEn, 'en-EN');
         CrearproveedoresComponent,
         ListadoUsuariosComponent,
         EditarUsuarioComponent,
+        VentasComponent,
+        ReportesComponent,
 
         
 

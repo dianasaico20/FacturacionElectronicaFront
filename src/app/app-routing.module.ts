@@ -19,6 +19,8 @@ import { PersonasComponent } from '@pages/personas/personas.component';
 import { ProveedoresComponent } from '@pages/proveedores/proveedores.component';
 import { CrearproveedoresComponent } from './pages/proveedores/crear/crearproveedores.component';
 import { ListadoUsuariosComponent } from '@pages/listado-usuarios/listado-usuarios.component';
+import { VentasComponent } from '@pages/ventas/ventas.component';
+import { ReportesComponent } from '@pages/reportes/reportes.component';
 
 const routes: Routes = [
     {
@@ -47,6 +49,14 @@ const routes: Routes = [
             {
                 path: 'personas',
                 component: PersonasComponent
+            },
+            {
+                path: 'reportes',
+                component: ReportesComponent
+            },
+            {
+                path: 'ventas',
+                component: VentasComponent
             },
             {
                 path: 'sub-menu-1',
